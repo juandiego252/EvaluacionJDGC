@@ -1,0 +1,55 @@
+package com.clearminds.componentes;
+
+public class Producto {
+
+	private String codigo;
+	private String nombre;
+	private double precio;
+
+	public Producto() {
+	}
+
+	public Producto(String codigo, String nombre, double precio) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public void incrementarPrecio(int incremento) {
+		if (incremento >= 0) {
+			double res = precio * (incremento / 100.0);
+			precio += res;
+		}
+	}
+
+	public void disminuirPrecio(double descuento) {
+		if (descuento >= 0) {
+			double dessCalculado = precio * (descuento / 100.0);
+			precio -= dessCalculado;
+		}
+	}
+}
